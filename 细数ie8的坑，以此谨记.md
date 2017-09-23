@@ -66,4 +66,7 @@ ie8对console经常会报该console未定义，而且会影响后面的代码，
 
 
 
+## 六、去掉ie8浏览器上的兼容视图（向下以ie7的模式出现）
+
+`<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>//让浏览器以最高的浏览器版本渲染页面`
 
