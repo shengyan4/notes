@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>with用法示例</title>
+	<style>
+		body{
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<script>
+	var $body=document.getElementsByTagName('body')[0];
+		var withFunction={
+			'one':function(){
+				$body.style.backgroundColor= "blue";
+			}
+		};
+		with(withFunction){
+			one();
+		}
+	</script>
+</body>
+</html>
