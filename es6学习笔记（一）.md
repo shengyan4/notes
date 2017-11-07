@@ -1,3 +1,6 @@
+# es6学习笔记（一）
+
+```
 2017.7.25
 
 es6:第一章
@@ -177,7 +180,7 @@ ES5提供 String.fromCharCode 方法，用于从码点返回对应字符，但�
 var text = String.fromCodePoint(0x20BB7);
 for (let i = 0; i < text.length; i++) {
 console.log(text[i]);
-字符串的扩展 - ECMAScript 6入门
+字符串的扩展 - ECMAScript 6入门
 http://es6.ruanyifeng.com/#docs/string
 }
 // " "
@@ -187,7 +190,7 @@ console.log(i);
 }
 // "吉"
 
-5. at()
+5. at()
 ES5对字符串对象提供 charAt 方法，返回字符串给定位置的字符。该方法不能识别码点大于 0xFFFF 的字符。
 'abc'.charAt(0) // "a"
 '₻'.charAt(0) // "\uD842"
@@ -196,22 +199,22 @@ ES7提供了字符串实例的 at 方法，可以识别Unicode编号大于 0xFFF
 器已经支持该方法。
 'abc'.at(0) // "a"
 '₻'.at(0) // "₻"
-6. normalize()
+6. normalize()
 ES6提供字符串实例的 normalize() 方法，用来将字符的不同表示方法统一为同样的形式，这称为Unicode正
 规化。
 '\u01D1'.normalize() === '\u004F\u030C'.normalize()
 // true
-字符串的扩展 - ECMAScript 6入门
+字符串的扩展 - ECMAScript 6入门
 http://es6.ruanyifeng.com/#docs/string
 normalize 方法可以接受四个参数。
-NFC ，默认参数，表示“标准等价合成”（Normalization Form Canonical Composition），返回多
+NFC ，默认参数，表示“标准等价合成”（Normalization Form Canonical Composition），返回多
 个简单字符的合成字符。所谓“标准等价”指的是视觉和语义上的等价。
-NFD ，表示“标准等价分解”（Normalization Form Canonical Decomposition），即在标准等价的
+NFD ，表示“标准等价分解”（Normalization Form Canonical Decomposition），即在标准等价的
 前提下，返回合成字符分解的多个简单字符。
-NFKC ，表示“兼容等价合成”（Normalization Form Compatibility Composition），返回合成字
+NFKC ，表示“兼容等价合成”（Normalization Form Compatibility Composition），返回合成字
 符。所谓“兼容等价”指的是语义上存在等价，但视觉上不等价，比如“囍”和“喜喜”。（这只是用来举
 例， normalize 方法不能识别中文。）
-NFKD ，表示“兼容等价分解”（Normalization Form Compatibility Decomposition），即在兼容等
+NFKD ，表示“兼容等价分解”（Normalization Form Compatibility Decomposition），即在兼容等
 价的前提下，返回合成字符分解的多个简单字符。
 '\u004F\u030C'.normalize('NFC').length // 1
 '\u004F\u030C'.normalize('NFD').length // 2
@@ -219,7 +222,7 @@ NFKD ，表示“兼容等价分解”（Normalization Form Compatibility Dec
 不过， normalize 方法目前不能识别三个或三个以上字符的合成。这种情况下，还是只能使用正则表达式，通
 过Unicode编号区间判断。
 
-7. includes(), startsWith(), endsWith()
+7. includes(), startsWith(), endsWith()
 传统上，JavaScript只有 indexOf 方法，可以用来确定一个字符串是否包含在另一个字符串中。ES6又提供了
 三种新方法。
 includes()：返回布尔值，表示是否找到了参数字符串。
@@ -234,7 +237,7 @@ s.includes('Hello', 6) // false
 上面代码表示，使用第二个参数 n 时， endsWith 的行为与其他两个方法有所不同。它针对前 n 个字符，而其他
 两个方法针对从第 n 个位置直到字符串结束。
 
-8. repeat()
+8. repeat()
 repeat 方法返回一个新字符串，表示将原字符串重复 n 次。
 'x'.repeat(3) // "xxx"
 'hello'.repeat(2) // "hellohello"
@@ -243,7 +246,7 @@ repeat 方法返回一个新字符串，表示将原字符串重复 n 次。
 'na'.repeat(2.9) // "nana"
 如果 repeat 的参数是负数或者 Infinity ，会报错。
 
-9. padStart()，padEnd()
+9. padStart()，padEnd()
 ES7推出了字符串补全长度的功能。如果某个字符串不够指定长度，会在头部或尾部补全。 padStart 用于头部
 补全， padEnd 用于尾部补全。
 'x'.padStart(5, 'ab') // 'ababx'
@@ -260,7 +263,7 @@ There are <b>${basket.count}</b> items
 in your basket, <em>${basket.onSale}</em>
 are on sale!
 `);
-模板字符串（template string）是增强版的字符串，用反引号（`）标识。它可以当作普通字符串使用，也可
+模板字符串（template string）是增强版的字符串，用反引号（`）标识。它可以当作普通字符串使用，也可
 以用来定义多行字符串，或者在字符串中嵌入变量。
 
 如果需要引用模板字符串本身，可以像下面这样写。
@@ -287,9 +290,9 @@ var template = `
 
 12. 标签模板
 模板字符串的功能，不仅仅是上面这些。它可以紧跟在一个函数名后面，该函数将被调用来处理这个模板字符
-字符串的扩展 - ECMAScript 6入门
+字符串的扩展 - ECMAScript 6入门
 http://es6.ruanyifeng.com/#docs/string
-串。这被称为“标签模板”功能（tagged template）。
+串。这被称为“标签模板”功能（tagged template）。
 标签模板其实不是模板，而是函数调用的一种特殊形式。“标签”指的就是函数，紧跟在后面的模板字符串就是
 它的参数。
 var a = 5;
@@ -308,3 +311,4 @@ String.raw`Hi\n${2+3}!`;
 String.raw`Hi\u000A!`;
 // 'Hi\\u000A!'
 如果原字符串的斜杠已经转义，那么 String.raw 不会做任何处理。
+```

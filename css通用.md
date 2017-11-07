@@ -1,3 +1,6 @@
+# css通用
+
+```
 css通用：
 淘宝：
 body, html body {
@@ -52,3 +55,4 @@ q:before, q:after {
 abbr, acronym {    
  border: 0;   
  }   
+```

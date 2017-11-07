@@ -1,3 +1,6 @@
+# git笔记
+
+```
 2017.5.25
 
 git笔记：
@@ -82,3 +85,4 @@ config:
 git config user.name "your name"
 git config user.email 
 
+```
