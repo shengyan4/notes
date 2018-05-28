@@ -1,0 +1,1020 @@
+2017.4.5
+  一、检测打开的该动画的是电脑还是手机还是平板，如果是手机，手机的系统是安卓或是IOS系统，用的是微信还是qq还是uc浏览器或者safari,或者是ie或者是谷歌，或者是火狐，或者是opera等，
+  二、缓存cookie,可暂时保存用户记录
+  三、解码和编码
+  四、手机切换横竖屏状态，屏幕旋转window.onorientationchange
+  五、 浅淡HTML5移动Web开发 https://sanwen8.cn/p/299Y9sg.html
+  六、拖拽效果，将动画动作封装起来，电脑怎样显示，微信 不支持自动播放动画属性，
+  七、判断用户是否在浏览器中切换了页面，切换了则暂停播放的音乐或者视频，等用户切换回来在继续之前的动作。
+  八、解决ios禁止audio自动播放属性
+  九、清除缓存设置，阻止冒泡事件
+  暂存问题：
+  苹果手机点击下载链接第二次无效，安卓手机比较卡，加载速度慢
+  1.
+   location.host 属性：设置或取得当前 URL 的主机名称和端口号,不能单独的设定端口号.
+   location.hostname 属性：设置或取得当前 URL 的主机名.
+ 2.
+  caller和callee的区别  http://blog.csdn.net/laijieyao/article/details/43404953
+ 3.
+  floor() 方法执行的是向下取整计算，它返回的是小于或等于函数参数，并且与之最接近的整数
+ 4.匿名函数 http://www.cnblogs.com/chenxianbin89/archive/2010/01/28/1658392.html
+   (function(){  
+     //这里忽略jQuery所有实现  
+    })(); //当一个匿名函数被括起来，然后再在后面加一个括号，这个匿名函数就能立即运行起来！
+ 5.location 
+ Location 对象属性
+		属性	描述
+		hash	设置或返回从井号 (#) 开始的 URL（锚）。
+		host	设置或返回主机名和当前 URL 的端口号。
+		hostname	设置或返回当前 URL 的主机名。
+		href	设置或返回完整的 URL。
+		pathname	设置或返回当前 URL 的路径部分。
+		port	设置或返回当前 URL 的端口号。
+		protocol	设置或返回当前 URL 的协议。
+		search	设置或返回从问号 (?) 开始的 URL（查询部分）。
+		Location 对象方法
+		属性	描述
+		assign()	加载新的文档。
+		reload()	重新加载当前文档。
+		replace()	用新的文档替换当前文档。
+ 6.window
+		        Window 对象属性
+		属性	描述
+		closed	返回窗口是否已被关闭。
+		defaultStatus	设置或返回窗口状态栏中的默认文本。
+		document	对 Document 对象的只读引用。请参阅 Document 对象。
+		history	对 History 对象的只读引用。请参数 History 对象。
+		innerheight	返回窗口的文档显示区的高度。
+		innerwidth	返回窗口的文档显示区的宽度。
+		length	设置或返回窗口中的框架数量。
+		location	用于窗口或框架的 Location 对象。请参阅 Location 对象。
+		name	设置或返回窗口的名称。
+		Navigator	对 Navigator 对象的只读引用。请参数 Navigator 对象。
+		opener	返回对创建此窗口的窗口的引用。
+		outerheight	返回窗口的外部高度。
+		outerwidth	返回窗口的外部宽度。
+		pageXOffset	设置或返回当前页面相对于窗口显示区左上角的 X 位置。
+		pageYOffset	设置或返回当前页面相对于窗口显示区左上角的 Y 位置。
+		parent	返回父窗口。
+		Screen	对 Screen 对象的只读引用。请参数 Screen 对象。
+		self	返回对当前窗口的引用。等价于 Window 属性。
+		status	设置窗口状态栏的文本。
+		top	返回最顶层的先辈窗口。
+		window	window 属性等价于 self 属性，它包含了对窗口自身的引用。
+		screenLeft
+		screenTop
+		screenX
+		screenY
+		只读整数。声明了窗口的左上角在屏幕上的的 x 坐标和 y 坐标。IE、Safari 和 Opera 支持 screenLeft 和 screenTop，而 Firefox 和 Safari 支持 screenX 和 screenY。
+		Window 对象方法
+		方法	描述
+		alert()	显示带有一段消息和一个确认按钮的警告框。
+		blur()	把键盘焦点从顶层窗口移开。
+		clearInterval()	取消由 setInterval() 设置的 timeout。
+		clearTimeout()	取消由 setTimeout() 方法设置的 timeout。
+		close()	关闭浏览器窗口。
+		confirm()	显示带有一段消息以及确认按钮和取消按钮的对话框。
+		createPopup()	创建一个 pop-up 窗口。
+		focus()	把键盘焦点给予一个窗口。
+		moveBy()	可相对窗口的当前坐标把它移动指定的像素。
+		moveTo()	把窗口的左上角移动到一个指定的坐标。
+		open()	打开一个新的浏览器窗口或查找一个已命名的窗口。
+		print()	打印当前窗口的内容。
+		prompt()	显示可提示用户输入的对话框。
+		resizeBy()	按照指定的像素调整窗口的大小。
+		resizeTo()	把窗口的大小调整到指定的宽度和高度。
+		scrollBy()	按照指定的像素值来滚动内容。
+		scrollTo()	把内容滚动到指定的坐标。
+		setInterval()	按照指定的周期（以毫秒计）来调用函数或计算表达式。
+		setTimeout()	在指定的毫秒数后调用函数或计算表达式。
+ 7.history
+		 History 对象属性
+		属性	描述
+		length	返回浏览器历史列表中的 URL 数量。
+		History 对象方法
+		方法	描述
+		back()	加载 history 列表中的前一个 URL。
+		forward()	加载 history 列表中的下一个 URL。
+		go()	加载 history 列表中的某个具体页面。
+
+ 8.screen
+		 Screen 对象属性
+		属性	描述
+		availHeight	返回显示屏幕的高度 (除 Windows 任务栏之外)。
+		availWidth	返回显示屏幕的宽度 (除 Windows 任务栏之外)。
+		bufferDepth	设置或返回调色板的比特深度。
+		colorDepth	返回目标设备或缓冲器上的调色板的比特深度。
+		deviceXDPI	返回显示屏幕的每英寸水平点数。
+		deviceYDPI	返回显示屏幕的每英寸垂直点数。
+		fontSmoothingEnabled	返回用户是否在显示控制面板中启用了字体平滑。
+		height	返回显示屏幕的高度。
+		logicalXDPI	返回显示屏幕每英寸的水平方向的常规点数。
+		logicalYDPI	返回显示屏幕每英寸的垂直方向的常规点数。
+		pixelDepth	返回显示屏幕的颜色分辨率（比特每像素）。
+		updateInterval	设置或返回屏幕的刷新率。
+		width	返回显示器屏幕的宽度。
+
+ 9.navigator  http://blog.csdn.net/gohome520/article/details/7335081
+
+		 Navigator 对象属性
+		属性	描述
+		appCodeName	返回浏览器的代码名。
+		appMinorVersion	返回浏览器的次级版本。
+		appName	返回浏览器的名称。
+		appVersion	返回浏览器的平台和版本信息。
+		browserLanguage	返回当前浏览器的语言。
+		cookieEnabled	返回指明浏览器中是否启用 cookie 的布尔值。
+		cpuClass	返回浏览器系统的 CPU 等级。
+		onLine	返回指明系统是否处于脱机模式的布尔值。
+		platform	返回运行浏览器的操作系统平台。
+		systemLanguage	返回 OS 使用的默认语言。
+		userAgent	返回由客户机发送服务器的 user-agent 头部的值。
+		userLanguage	返回 OS 的自然语言设置。
+		Navigator 对象方法
+		方法	描述
+		javaEnabled()	规定浏览器是否启用 Java。
+		taintEnabled()	规定浏览器是否启用数据污点 (data tainting)。
+
+10.decodeURIComponent() 函数可对 encodeURIComponent() 函数编码的 URI 进行解码。
+   encodeURIComponent() 编码，转码
+   unescape() 函数可对通过 escape() 编码的字符串进行解码。该函数的工作原理是这样的：通过找到形式为 %xx 和 %uxxxx 的字符序列（x 表示十六进制的数字），用 Unicode 字符 \u00xx 和 \uxxxx 替换这样的字符序列进行解码。
+    escape()  编码，转码
+    注释：ECMAScript v3 已从标准中删除了 unescape() 函数，并反对使用它，因此应该用 decodeURI() 和 decodeURIComponent() 取而代之。
+11.oGMTString() 方法可根据格林威治时间 (GMT) 把 Date 对象转换为字符串，并返回结果。
+12.cookie
+13.window.orientation判断移动设备横屏竖屏
+  通过window.orientation来判断设备横竖屏
+  屏幕旋转window.onorientationchange
+function checkOrient() {
+        
+    if (window.orientation == 0 || window.orientation == 180){
+        var screenOrientation = 'portrait';
+    }
+    else if (window.orientation == 90 || window.orientation == -90){
+        var screenOrientation = 'landscape';
+    }
+    return screenOrientation;
+}
+// 添加事件监听
+addEventListener('load', function(){
+    checkOrient();
+    window.onorientationchange = checkOrient;
+});
+14.移动端上遇到的各种坑与相对解决方案   http://www.cnblogs.com/baihuaxiu/p/6654496.html
+    mobileHack 
+15.Math.abs() 方法可返回数的绝对值。
+16.localStorage只支持string类型的存储。
+   设置数据：localStorage.setItem(key,value); 
+   获取数据：localStorage.getItem(key) 获取全部数据
+   删除数据：localStorage.removeItem(key)
+   清空全部数据：localStorage.clear()
+   获取本地存储数据数量：localStorage.length
+   获取第 N 个数据的 key 键值：localStorage.key(N)
+   存储大小限制测试及异常处理
+   数据存储大小限制测试
+   不同浏览器对 HTML5 的本地存储大小基本均有限制，一个测试的结果如下：
+
+	复制代码代码如下:
+	IE 9 > 4999995 + 5 = 5000000
+	firefox 22.0 > 5242875 + 5 = 5242880
+	chrome 28.0 > 2621435 + 5 = 2621440
+	safari 5.1 > 2621435 + 5 = 2621440
+	opera 12.15 > 5M （超出则会弹出允许请求更多空间的对话框）
+	landscape 是代表横屏，portrait代表竖屏
+17.charCodeAt() 方法可返回指定位置的字符的 Unicode 编码。这个返回值是 0 - 65535 之间的整数。
+方法 charCodeAt() 与 charAt() 方法执行的操作相似，只不过前者返回的是位于指定位置的字符的编码，而后者返回的是字符子串。
+18.Top属性返回当前窗口的最顶层浏览器窗口。
+2017.4.6
+1.data() 方法向被选元素附加数据，或者从被选元素获取数据。
+2.animation 有反向轮流播放动作，更自然
+2017.4.10
+ 1.document.visibilityState  http://www.bubuko.com/infodetail-850519.html
+ 那么，什么时候需要使用visibilitychange事件呢？比如，如果你的页面上有嵌入视频正在播放，当用户切换到其它标签页时，你的标签页上的视频应自动暂停播放，当用户切换回来时继续接着播放。再比如，如果你的页面有自动刷新动作，当用户切换到其它标签页时，你就应该停止刷新，而当用户切换回来时继续之前的动作。
+ 
+ 2. 轻松化解iOS系统及微信中不支持audio自动播放问题     http://www.tuicool.com/articles/raeqem6
+   //一般情况下，这样就可以自动播放了，但是一些奇葩iPhone机不可以 
+     document.getElementById('idName').play(); 
+    //微信必须加入Weixin JSAPI的WeixinJSBridgeReady才能生效 
+    document.addEventListener("WeixinJSBridgeReady", function () { 
+        document.getElementById('idName').play(); 
+        document.getElementById('video').play(); //视频自动播放
+    }, false); 
+
+
+    2017.4.14
+
+  一、 meta标签
+
+      Meta http-equiv属性详解(转)  http://kinglyhum.iteye.com/blog/827807
+      1、Expires(期限) 
+	说明：可以用于设定网页的到期时间。一旦网页过期，必须到服务器上重新传输。 
+	用法：
+	Html代码  收藏代码
+	＜meta http-equiv="expires" content="Wed, 20 Jun 2007 22:33:00 GMT"＞  
+
+	注意：必须使用GMT的时间格式。 
+
+	2、Pragma(cache模式) 
+	说明：是用于设定禁止浏览器从本地机的缓存中调阅页面内容，设定后一旦离开网页就无法从Cache中再调出 
+	用法：
+	Html代码  收藏代码
+	＜meta http-equiv="Pragma" content="no-cache"＞  
+
+	注意：这样设定，访问者将无法脱机浏览。 
+
+	3、Refresh(刷新) 
+	说明：自动刷新并指向新页面。 
+	用法：
+	Html代码  收藏代码
+	＜meta http-equiv="Refresh" content="2；URL=http://www.net.cn/"＞  
+
+	注意：其中的2是指停留2秒钟后自动刷新到URL网址。 
+
+	4、Set-Cookie(cookie设定) 
+	说明：如果网页过期，那么存盘的cookie将被删除。 
+	用法：
+	Html代码  收藏代码
+	＜meta http-equiv="Set-Cookie" content="cookievalue=xxx;expires=Wednesday, 20-Jun-2007 22:33:00 GMT； path=/"＞  
+
+	注意：必须使用GMT的时间格式。 
+
+	5、Window-target(显示窗口的设定) 
+	说明：强制页面在当前窗口以独立页面显示。 
+	用法：
+	Html代码  收藏代码
+	＜meta http-equiv="Window-target" content="_top"＞  
+
+	注意：用来防止别人在框架里调用自己的页面。 
+
+	6、content-Type(显示字符集的设定) 
+	说明：设定页面使用的字符集。 
+	用法：
+	Html代码  收藏代码
+	＜meta http-equiv="content-Type" content="text/html; charset=gb2312"＞  
+
+
+	7、Pics-label(网页等级评定) 
+	用法：
+	Html代码  收藏代码
+	<meta http-equiv="Pics-label" contect="">  
+
+	说明：在IE的internet选项中有一项内容设置，可以防止浏览一些受限制的网站，而网站的限制级别就是通过meta属性来设置的。 
+
+	8、Page_Enter、Page_Exit 
+	设定进入页面时的特殊效果
+	Html代码  收藏代码
+	<meta http-equiv="Page-Enter"    contect="revealTrans(duration=1.0,transtion=    12)">    
+
+	设定离开页面时的特殊效果
+	Html代码  收藏代码
+	<meta http-equiv="Page-Exit"    contect="revealTrans(duration=1.0,transtion=    12)">    
+
+
+	Duration的值为网页动态过渡的时间，单位为秒。  
+	Transition是过渡方式，它的值为0到23，分别对应24种过渡方式。如下表：  
+	0    盒状收缩    1    盒状放射  
+	2    圆形收缩    3    圆形放射  
+	4    由下往上    5    由上往下  
+	6    从左至右    7    从右至左  
+	8    垂直百叶窗    9    水平百叶窗  
+	10    水平格状百叶窗    11垂直格状百叶窗  
+	12    随意溶解    13从左右两端向中间展开  
+	14从中间向左右两端展开    15从上下两端向中间展开  
+	16从中间向上下两端展开    17    从右上角向左下角展开  
+	18    从右下角向左上角展开    19    从左上角向右下角展开  
+	20    从左下角向右上角展开    21    水平线状展开  
+	22    垂直线状展开    23    随机产生一种过渡方式  
+
+	9、清除缓存（再访问这个网站要重新下载！） 
+	Html代码  收藏代码
+	<meta http-equiv="cache-control" content="no-cache">  
+
+
+	10、设定网页的到期时间 
+	Html代码  收藏代码
+	<meta http-equiv="expires" content="0">  
+
+
+	11、关键字,给搜索引擎用的 
+	Html代码  收藏代码
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">  
+
+
+	12.页面描述 
+	Html代码  收藏代码
+	<meta http-equiv="description" content="This is my page">  
+
+	二、 消息摘要算法及md5    http://blog.csdn.net/chengmaoning/article/details/44707793
+	三、node安装配置，grunt打包工具使用
+     Gruntfile 实例       http://wiki.jikexueyuan.com/project/grunt/sqlite-select.html
+
+     实战  http://www.cnblogs.com/hutuzhu/p/4539186.html
+
+
+     csslint        检查css的样式问题
+     concat         合并
+     uglify         压缩
+     cssmin         css压缩
+     grunt-watch    监视文件的变化自动化操作
+     jshint         是一个javaScript语法和风格的检查工具，但检查不出逻辑问题。
+     imagemin       压缩图片
+
+     2017.4.17
+     <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+IE=edge表示强制使用IE最新内核，chrome=1表示如果安装了针对IE6/7/8等版本的浏览器插件Google Chrome Frame（可以让用户的浏览器外观依然是IE的菜单和界面，但用户在浏览网页时，实际上使用的是Chrome浏览器内核），那么就用Chrome内核来渲染。关于此meta标签的具体说明，可参见StackOverflow上的精彩回答，<meta>标签高人的英文解释可以参看
+http://stackoverflow.com/questions/6771258/whats-the-difference-if-meta-http-equiv-x-ua-compatible-content-ie-edge-e
+我有加了一句
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+然后就可以了
+内核控制Meta标签，因为目前国内的主流浏览器都是双内核，故而添加meta标签来告诉浏览器使用什么内核来渲染页面
+
+2017.5.2
+命名规范：
+    http://www.jb51.net/article/87142.htm
+    命名的方法通常有以下几类： 
+a).命名法说明
+1).camel命名法，形如thisIsAnApple 
+2).pascal命名法，形如ThisIsAnApple
+3).下划线命名法，形如this_is_an_apple · 
+4).中划线命名法，形如this-is-an-apple 
+根据不同类型的内容，必须严格采用如下的命名法： 
+b).变量名：必须使用camel命名法
+c).参数名：必须使用camel命名法 
+d).函数名：必须使用camel命名法
+e).方法/属性：必须使用camel命名法
+f).私有（保护）成员：必须以下划线_开头
+g).常量名：必须使用全部大写的下划线命名法，如IS_DEBUG_ENABLED
+h).类名：必须使用pascal命名法
+i).枚举名：必须使用pascal命名法 
+j).枚举的属性：必须使用全部大写的下划线命名法
+k).命名空间：必须使用camel命名法 
+l).语义：命名同时还需要关注语义，如： 
+变量名应当使用名词； 
+boolean类型的应当使用is、has等起头，表示其类型；· 
+函数名应当用动宾短语；
+类名应当用名词。
+
+
+
+sublime 快捷键
+多行选择后按下ctrl+/
+
+选择类 
+Ctrl+D 选中光标所占的文本，继续操作则会选中下一个相同的文本。 
+Alt+F3 选中文本按下快捷键，即可一次性选择全部的相同文本进行同时编辑。举个栗子：快速选中并更改所有相同的变量名、函数名等。 
+Ctrl+L 选中整行，继续操作则继续选择下一行，效果和 Shift+↓ 效果一样。 
+Ctrl+Shift+L 先选中多行，再按下快捷键，会在每行行尾插入光标，即可同时编辑这些行。 
+Ctrl+Shift+M 选择括号内的内容（继续选择父括号）。举个栗子：快速选中删除函数中的代码，重写函数体代码或重写括号内里的内容。 
+Ctrl+M 光标移动至括号内结束或开始的位置。 
+Ctrl+Enter 在下一行插入新行。举个栗子：即使光标不在行尾，也能快速向下插入一行。 
+Ctrl+Shift+Enter 在上一行插入新行。举个栗子：即使光标不在行首，也能快速向上插入一行。 
+Ctrl+Shift+[ 选中代码，按下快捷键，折叠代码。 
+Ctrl+Shift+] 选中代码，按下快捷键，展开代码。 
+Ctrl+K+0 展开所有折叠代码。 
+Ctrl+← 向左单位性地移动光标，快速移动光标。 
+Ctrl+→ 向右单位性地移动光标，快速移动光标。 
+shift+↑ 向上选中多行。 
+shift+↓ 向下选中多行。 
+Shift+← 向左选中文本。 
+Shift+→ 向右选中文本。 
+Ctrl+Shift+← 向左单位性地选中文本。 
+Ctrl+Shift+→ 向右单位性地选中文本。 
+Ctrl+Shift+↑ 将光标所在行和上一行代码互换（将光标所在行插入到上一行之前）。 
+Ctrl+Shift+↓ 将光标所在行和下一行代码互换（将光标所在行插入到下一行之后）。 
+Ctrl+Alt+↑ 向上添加多行光标，可同时编辑多行。 
+Ctrl+Alt+↓ 向下添加多行光标，可同时编辑多行。
+
+编辑类
+
+Ctrl+J 合并选中的多行代码为一行。举个栗子：将多行格式的CSS属性合并为一行。 
+Ctrl+Shift+D 复制光标所在整行，插入到下一行。 
+Tab 向右缩进。 
+Shift+Tab 向左缩进。 
+Ctrl+K+K 从光标处开始删除代码至行尾。 
+Ctrl+Shift+K 删除整行。 
+Ctrl+/ 注释单行。 
+Ctrl+Shift+/ 注释多行。 
+Ctrl+K+U 转换大写。 
+Ctrl+K+L 转换小写。 
+Ctrl+Z 撤销。 
+Ctrl+Y 恢复撤销。 
+Ctrl+U 软撤销，感觉和 Gtrl+Z 一样。 
+Ctrl+F2 设置书签 
+Ctrl+T 左右字母互换。 
+F6 单词检测拼写
+
+搜索类
+
+Ctrl+F 打开底部搜索框，查找关键字。 
+Ctrl+shift+F 在文件夹内查找，与普通编辑器不同的地方是sublime允许添加多个文件夹进行查找，略高端，未研究。 
+Ctrl+P 打开搜索框。举个栗子：1、输入当前项目中的文件名，快速搜索文件，2、输入@和关键字，查找文件中函数名，3、输入：和数字，跳转到文件中该行代码，4、输入#和关键字，查找变量名。 
+Ctrl+G 打开搜索框，自动带：，输入数字跳转到该行代码。举个栗子：在页面代码比较长的文件中快速定位。 
+Ctrl+R 打开搜索框，自动带@，输入关键字，查找文件中的函数名。举个栗子：在函数较多的页面快速查找某个函数。 
+Ctrl+： 打开搜索框，自动带#，输入关键字，查找文件中的变量名、属性名等。 
+Ctrl+Shift+P 打开命令框。场景栗子：打开命名框，输入关键字，调用sublime text或插件的功能，例如使用package安装插件。 
+Esc 退出光标多行选择，退出搜索框，命令框等。
+
+显示类
+
+Ctrl+Tab 按文件浏览过的顺序，切换当前窗口的标签页。 
+Ctrl+PageDown 向左切换当前窗口的标签页。 
+Ctrl+PageUp 向右切换当前窗口的标签页。 
+Alt+Shift+1 窗口分屏，恢复默认1屏（非小键盘的数字） 
+Alt+Shift+2 左右分屏-2列 
+Alt+Shift+3 左右分屏-3列 
+Alt+Shift+4 左右分屏-4列 
+Alt+Shift+5 等分4屏 
+Alt+Shift+8 垂直分屏-2屏 
+Alt+Shift+9 垂直分屏-3屏 
+Ctrl+K+B 开启/关闭侧边栏。 
+F11 全屏模式 
+Shift+F11 免打扰模式
+Ctrl+H：替换
+
+sublime 插件安装及使用  http://www.cnblogs.com/hykun/p/sublimeText3.html
+
+2017.5.4
+css通用：
+body, html body {
+    color: #777;
+    font-family: tahoma,arial,'\5fae\8f6f\96c5\9ed1','Hiragino Sans GB',sans-serif!important;
+    -webkit-backface-visibility: visible!important;
+}
+
+查资料：http://www.askingbox.com/
+
+淘宝首页笔记：
+//SPM是淘宝社区电商业务（xTao）为外部合作伙伴（外站）提供的一套跟踪引导成交效果数据的解决方案。
+  下面是一个跟踪点击到宝贝详情页的引导成交效果数据的SPM示例：http:// detail. tmall. com/ item.htm?id= 3716461318 &&spm= 2014.123456789.1.2其中spm=2014.123456789.1.2 便是下文所说的SPM编码SPM编码：用来跟踪页面模块位置的编码，标准spm编码由4段组成，采用a.b.c.d的格式（建议全部使用数字），其中，a代表站点类型，对于xTao合作伙伴（外站），a为固定值，a=2014b代表外站ID（即外站所使用的TOP appkey），比如您的站点使用的TOP appkey=123456789，则b=123456789c代表b站点上的频道ID，比如是外站某个团购频道，某个逛街频道，某个试用频道 等d代表c频道上的页面ID，比如是某个团购详情页，某个宝贝详情页，某个试用详情页 等完整的SPM四位编码能标识出某网站中某一个频道的某一个具体页面。
+
+链接：https://www.zhihu.com/question/37262526/answer/81544016
+ <meta name="data-spm" content="a231o">
+
+//网站小图标
+    <link rel="shortcut icon" href="//img.alicdn.com/tps/i1/T17pg.FiFbXXXON6_X-16-16.ico" type="image/x-icon"/>
+
+	//微软验证该站点拥有者信息
+	<meta name="msvalidate.01" content="66DC2E5B38AECFB3E244BB04EBAF348B" />
+	//谷歌验证该站点拥有者信息
+	<meta name="google-site-verification" content="bwl_CutQ7wjeaHn4M_N2h3642IFiGcpHEC5Z-CpeisI" />
+	//搜狗验证该站点拥有者信息
+	<meta name="sogou_site_verification" content="9w2mwdLNcz"/>
+	//script新属性，   http://www.tuicool.com/articles/UzQZFjv
+		 <script src="//assets.alicdn.com/??s/kissy/1.3.0/kissy-min.js,apps/e/brix/2.0/brix-min.js"
+            charset="utf-8"
+            bx-config="{level:10,autoPagelet:true,componentsPath:'//g.alicdn.com/mm/yellowstone/0.76.0/', tag: '20140226',combine:true}" crossorigin></script>
+	   1.crossorigin：
+
+	   虽然还没有完全被标准化，但是一些浏览器支持 crossorigin 属性。基本的想法是，浏览器会限制对非同源资源的使用（同源资源是指相同的协议、hostname 以及端口，例如： ` http://google.com:80）。
+
+      这是为了防止你，例如，向你的竞争对手网站发请求，注销你的用户在对方网站的账号（这不好！）。这个问题牵扯到 script 标签虽然有点意外，但如果实现了 crossorigin ，你只要加一个 handler 到 window.onerror 事件上，就能在看控制台上看到一些警告信息，提示你引入了一个不该引入的外站脚本。在安全的浏览器下， 除非 你指定 crossorigin 属性，不然加载外站脚本不会出错。
+
+      crossorgin 不是一个神奇的安全手段，它所做的只是让浏览器启用正常的 CORS 访问检查，发起一个 OPTIONS 请求并检查 Access-Control header。
+
+       2.integrity ：
+
+      属性是子资源完整性新规范的一部分。它允许你为脚本文件将包含的内容内容提供一个 hash。这意味着可以防止在传输的时候内容丢失或者被恶意修改。就算使用了 SSL，这个规范也是有意义的，因为有时候你要加载的资源是你无法控制的站外资源，比如 code.jquery.com 。
+
+      如果你选择使用它，你要在 script 标签里包含一个 hash 类型以及 hash 值，将它们以连字符隔开。看起来类似下面这样：
+		<script
+		src="//code.jquery.com/jquery.js"
+		integrity="sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC">
+		</script>
+		3.document.currentScript
+
+		IE 不支持的一个新奇的东西是个叫做 document.currentScript 的属性。它指向当前正在被执行的脚本。如果你想要从你嵌入的 script 标签中拿一些属性来用，它会非常有用。我个人非常高兴它还没有被完全支持，否则它会让我们在一部分工作中渴望嵌入更复杂的代码。
+		4.onafterscriptexecute ?!
+
+		这个超没用，因为它只被 Firefox 支持。使用 onbeforescriptexecute 能让你绑定事件到每一个脚本的执行前和执行后，这很酷。
+
+		如果你对这个感到好奇，你可以研究下。event 对象包含一个被执行的脚本的引用，而 before 事件能通过 perventDefault() 取消脚本的执行。
+
+		5.for / event
+
+		到今天， HTML5 规范包含了一个很少见的，以前是 IE 特殊的方法来绑一段代码到一个事件。你应该能向下面这样让一段代码不被执行直到页面加载完成：
+
+		<script for="window" event="onload">
+		  alert("Hi!")
+		</script>
+		这段代码在 Chrome 或者 Firefox 下不能实际工作，但是它依然能够在 IE 下工作。
+
+		6.NOSCRIPT
+
+		如同你父母一样，很难相信 JavaScript 也曾经年少过。曾经有过这样一段时间你不能确定是否一个浏览器支持 JavaScript。更糟的是，你甚至不能确定那个浏览器能识别 script 标签。而如果一个浏览器不能识别标签，它应该会将它渲染成一个 inline 元素，意味着你所有 JavaScript 代码会被作为文本渲染在页面上！
+
+		幸运地是，规范已经能足够有效地避免这个情况发生，你只需要将你的代码包在 HTML 注释里，那些不支持脚本的浏览器会把下面的文本当做注释：
+
+		<script>
+		<!--  to hide script contents from old browsers
+
+		  // You would probably be pasting a ‘rollover’ script
+		  // you got from hotscripts.net here
+
+		// end hiding contents from old browsers  -->
+		</script>
+		当然，像很多事情一样，XHTML将这变得更糟。XML用特殊的方法来转义可能包含结束标签的内容，这是 CDATA 的来历：
+
+		<script>
+		//<![CDATA[
+
+		    // Is this the right incantation to get this to pass
+		    // the XHTML validator?
+
+		//]]>
+		</script>
+		像上面这样写，你的代码可以是一个规范的 XHTML。它对实际功能没有什么影响，但是它对你作为一个 Web 开发者的荣誉也许很重要（现在这个时代，谁还用 XHTML 啊——译者注）。
+
+		浏览器也包含一个有用的方法来让你把那些不支持 JavaScript 人赶走，通过 noscript 标签。 <noscript> 标签里的内容只有浏览器不支持脚本的时候才会被渲染出来：
+
+		<noscript>
+		  Please use Internet Explorer 5.5 or above.
+		</noscript>
+		<script>
+		  exploitInternetExplorer0Day();
+		</script>
+		如果你有敏锐的观察力，你会意识到 noscript 不接受 type 参数，这使得那些使用别的 type 类型的脚本的页面上如果出现 noscript 会显得有点歧义。 noscript 实际行为在各个浏览器下有所不同。
+
+		7.Script 标签和 innerHTML
+
+		通过 DOM 动态添加到页面上的 script 标签会被浏览器执行：
+
+		var myScript = document.createElement("script");
+		myScript.textContent = "alert(":hand:")";
+		document.head.appendChild(myScript);
+		通过 innerHTML 动态添加到页面上的 script 标签则不会被执行：
+
+		document.head.innerHTML += "<script>alert(":hand:")</script>";
+		为什么会是这样的原因不是很确定，但是它解决了一个小问题：“是否有一个办法让一个 script 标签在 Chrome 代码检查器中显示但不实际执行？”你可以利用这个来对你的同事做恶作剧。
+
+
+         with用法， with 语句可以方便地用来引用某个特定对象中已有的属性，但是不能用来给对象添加属性。要给对象创建新的属性，必须明确地引用该对象。  
+
+		 <script>
+            with (document)
+                with (body)
+                    with (insertBefore(createElement("script"), firstChild))
+                        setAttribute("exparams", "category=&userid=&aplus&pvid=200_11.251.246.153_395_1493862419484&bucket_info=&", id = "tb-beacon-aplus", src = (location > "https" ? "//g" : "//g") + ".alicdn.com/alilog/mlog/aplus_v2.js")
+        </script>
+
+
+        getQuery()函数返回 URL 中的查询部分。
+        eg:
+        例子
+		var a=URL.getQuery("http://example.com/go.asp?name=bill");
+		var b=URL.getQuery("http://example.com");
+		结果
+		a = "bill"
+		b = ""
+
+		get() 方法获得由选择器指定的 DOM 元素。
+		语法
+		$(selector).get(index)
+		参数	描述
+		index	可选。规定获取哪个匹配元素（通过 index 编号）。
+
+		delegate() 方法为指定的元素（属于被选元素的子元素）添加一个或多个事件处理程序，并规定当这些事件发生时运行的函数。
+		使用 delegate() 方法的事件处理程序适用于当前或未来的元素（比如由脚本创建的新元素）。
+		语法
+		$(selector).delegate(childSelector,event,data,function)
+
+
+
+
+
+		2017.5.10
+		超级压缩图片 https://tinypng.com/
+2017.5.18
+  微信公众号链接 https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzIyODcxMDI3OA==&scene=124#wechat_redirect
+	
+
+	2017.6.5
+
+	1. jQuery.fn.extend  写插件用
+
+	2. 旋转插件  http://www.cnblogs.com/cc11001100/p/6354234.htmljQuery.rotate.js
+
+	3. .get(index) ==[index];
+
+	2017.6.21
+
+	JS中typeof与instanceof的区别  http://blog.sina.com.cn/s/blog_532751d90100iv1r.html
+
+	JavaScript 中 typeof 和 instanceof 常用来判断一个变量是否为空，或者是什么类型的。但它们之间还是有区别的：
+typeof
+typeof 是一个一元运算，放在一个运算数之前，运算数可以是任意类型。
+它返回值是一个字符串，该字符串说明运算数的类型。typeof 一般只能返回如下几个结果：
+number,boolean,string,function,object,undefined。我们可以使用 typeof 来获取一个变量是否存在，如 if(typeof a!="undefined"){alert("ok")}，而不要去使用 if(a) 因为如果 a 不存在（未声明）则会出错，对于 Array,Null 等特殊对象使用 typeof 一律返回 object，这正是 typeof 的局限性。
+网上的一个小例子：
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script language="javascript" type="text/javascript">
+document.write ("typeof(1): "+typeof(1)+"<br>");
+document.write ("typeof(NaN): "+typeof(NaN)+"<br>");
+document.write ("typeof(Number.MIN_VALUE): "+typeof(Number.MIN_VALUE)+"<br>");
+document.write ("typeof(Infinity): "+typeof(Infinity)+"<br>");
+document.write ("typeof(\"123\"): "+typeof("123")+"<br>");
+document.write ("typeof(true): "+typeof(true)+"<br>");
+document.write ("typeof(window): "+typeof(window)+"<br>");
+document.write ("typeof(Array()): "+typeof(new Array())+"<br>");
+document.write ("typeof(function(){}): "+typeof(function(){})+"<br>");
+document.write ("typeof(document): "+typeof(document)+"<br>");
+document.write ("typeof(null): "+typeof(null)+"<br>");
+document.write ("typeof(eval): "+typeof(eval)+"<br>");
+document.write ("typeof(Date): "+typeof(Date)+"<br>");
+document.write ("typeof(sss): "+typeof(sss)+"<br>");
+document.write ("typeof(undefined): "+typeof(undefined)+"<br>")
+</script>
+<title>javascript类型测试</title>
+</head>
+
+<body>
+</body>
+</html>
+
+ 查看效果
+instanceof
+instance：实例,例子
+a instanceof b?alert("true"):alert("false"); //a是b的实例？真:假
+instanceof 用于判断一个变量是否某个对象的实例，如 var a=new Array();alert(a instanceof Array); 会返回 true，同时 alert(a instanceof Object) 也会返回 true;这是因为 Array 是 object 的子类。再如：function test(){};var a=new test();alert(a instanceof test) 会返回
+谈到 instanceof 我们要多插入一个问题，就是 function 的 arguments，我们大家也许都认为 arguments 是一个 Array，但如果使用 instaceof 去测试会发现 arguments 不是一个 Array 对象，尽管看起来很像。
+另外：
+测试 var a=new Array();if (a instanceof Object) alert('Y');else alert('N');
+得'Y’
+但 if (window instanceof Object) alert('Y');else alert('N');
+得'N'
+所以，这里的 instanceof 测试的 object 是指 js 语法中的 object，不是指 dom 模型对象。
+使用 typeof 会有些区别
+alert(typeof(window)) 会得 object
+
+
+object   含有所有javascript对象的特性的超类
+object.constructor  对象的构造函数
+object.hasOwnProperty() 检查属性是否被继承
+object.isPrototypeOf() 一个对象是否是另一个对象的原型
+object.propertyIsEnumerable() 是否可以通过for/in循环看到属性
+object.toLocaleString() 返回对象的本地字符串表示
+object.toString() 定义一个对象的字符串表示
+object.valueOf() 指定对象的原始值
+
+object.constructor    常用于判断
+
+2017.6.22
+
+ 1.js中的extend    http://www.cnblogs.com/panmy/p/5936378.html
+ 2. Proxy    http://www.tuicool.com/articles/vyEJreY     http://www.cnblogs.com/zczhangcui/p/6476657.html
+
+ Proxy，见名知意，其功能非常类似于设计模式中的代理模式，该模式常用于三个方面：
+		拦截和监视外部对对象的访问
+		降低函数或类的复杂度
+		在复杂操作前对操作进行校验或对所需资源进行管理
+ 3. Reflect    https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Reflect
+
+
+
+
+2017.6.29
+express 用法  http://www.cnblogs.com/Darren_code/p/node_express.html
+
+app.listen()  就是在给定的主机和端口上监听请求
+app.set(name, value)  set()为设置 name 的值设为 value
+app.get(name) 为获取设置项 name 的值
+app.engine()  重新设置模板文件的扩展名   比如想用ejs模板引擎来处理“.html”后缀的文件：app.engine('.html', require('ejs').__express);
+ app.engine(ext, callback) 注册模板引擎的 callback 用来处理ext扩展名的文件。
+ app.use([path], function) 使用中间件 function,可选参数path默认为"/"。使用 app.use() “定义的”中间件的顺序非常重要，它们将会顺序执行，use的先后顺序决定了中间件的优先级(经常有搞错顺序的时候);
+  app.render(view, [options], callback) 渲染 view, callback 用来处理返回的渲染后的字符串。
+
+
+
+  2017.6.30
+
+   (function(){　})(jQuery)； 用于存放开发插件的代码，执行其中代码时DOM不一定存在，所以直接自动执行DOM操作的代码 请小心使用。 
+   (function($){...})(jQuery) 用来定义一些需要预先定义好的函数
+   http://blog.csdn.net/rambo_china/article/details/7742321
+
+   jQuery.extend() 除了可以创建插件外,还可以用来扩展jQuery对象. 
+   jQuery.fn.extend() 方法来创建jQuery对象方法.可以以jquery方式调用
+
+   201.7.8
+
+   http://dditblog.com/itshare_458.html
+
+   与为对象添加属性一样、我们也可以直接将属性添加到命名空间、对象字面量方法不会污染全局命名空间、并在逻辑上协助组织代码和参数、并且、这种方式可读性和可维护性非常强、当然我们在使用时应当进行同名变量的存在性测试、以此来避免冲突、下面是一些常用的检测方法：
+var myApplication = myApplication || {};
+ 
+if(!myApplication) {
+    myApplication  = {};
+}
+ 
+window.myApplication || (window.myApplication || {});
+ 
+// 针对jQuery
+var myApplication = $.fn.myApplication = function() {};
+ 
+var myApplication = myApplication === undefined ? {} :myApplication;
+
+
+http://www.jb51.net/article/100095.htm   template.js 一款 JavaScript 模板引擎，简单，好用。提供一套模板语法，用户可以写一个模板区块，每次根据传入的数据，生成对应数据产生的HTML片段，渲染不同的效果。https://github.com/aui/artTemplate
+
+
+2017.7.21
+
+ sea.js api常用 https://github.com/seajs/seajs/issues/266
+
+
+
+ 2017.7.25
+
+
+ 任务：1.看一章es6,
+       2.一章node，
+       3.用seajs创建自己一般用的较多手机端的库，
+       4.继续写轮播插件
+
+
+es6:第一章
+
+let命令和const命令
+let命令：
+   1.let 只在所在的代码块内有效。
+
+   2.let 不像 var 那样会发生“变量提升”现象。所以，变量一定要在声明后使用，否则报错。
+
+   3.只要块级作用域内存在 let 命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影
+     响。ES6 明确规定，如果区块中存在 let 和 const 命令，这个区块对这些命令声明的变量，从一开始就形成
+     了封闭作用域。凡是在声明之前就使用这些变量，就会报错。
+
+   4.let 不允许在相同作用域内，重复声明同一个变量。
+
+   ps:(ES5 规定，函数只能在顶层作用域和函数作用域之中声明，不能在块级作用域声明)
+   5. •  允许在块级作用域内声明函数。
+      •  函数声明类似于 var ，即会提升到全局作用域或函数作用域的头部。
+      •  同时，函数声明还会提升到所在的块级作用域的头部。
+       注意，上面三条规则只对 ES6 的浏览器实现有效，其他环境的实现不用遵守，还是将块级作用域的函数声明当作
+       let 处理。
+
+
+const 命令：
+1.const 声明一个只读的常量。一旦声明，常量的值就不能改变。
+
+2.对于 const 来说，只声明不赋值，就会报错。
+
+3.const 的作用域与 let 命令相同：只在声明所在的块级作用域内有效。
+
+4.const 命令声明的常量也是不提升，同样存在暂时性死区，只能在声明的位置后面使用。
+
+5.const 声明的常量，也与 let 一样不可重复声明。
+
+6.对于复合类型的变量，变量名不指向数据，而是指向数据所在的地址。 const 命令只是保证变量名指
+
+向的地址不变，并不保证该地址的数据不变，所以将一个对象声明为常量必须非常小心。
+7.如果真的想将对象冻结，应该使用 Object.freeze 方法。
+8.为了保持兼容性， var 命令和 function 命令声明的全局变量，依旧是全
+局对象的属性；另一方面规定， let 命令、 const 命令、 class 命令声明的全局变量，不属于全局对象的属性。
+也就是说，从 ES6 开始，全局变量将逐步与全局对象的属性脱钩。
+
+
+
+2017.7.27
+seajs   cmd模块化   来源 ：http://yslove.net/seajs/
+
+aliasObject
+
+别名配置，配置之后可在模块中使用require调用 require('jquery');
+
+seajs.config({
+    alias: { 'jquery': 'jquery/jquery/1.10.1/jquery' }
+});
+define(function(require, exports, module) {
+    //引用jQuery模块
+    var $ = require('jquery');
+});
+pathsObject
+
+设置路径，方便跨目录调用。通过灵活的设置path可以在不影响base的情况下指定到某个目录。
+
+seajs.config({
+    //设置路径
+    paths: {
+        'gallery': 'https://a.alipayobjects.com/gallery'
+    },
+
+    // 设置别名，方便调用
+    alias: {
+        'underscore': 'gallery/underscore'
+    }
+});
+define(function(require, exports, module) {
+    var _ = require('underscore');
+     //=> 加载的是 https://a.alipayobjects.com/gallery/underscore.js
+});
+varsObject
+
+变量配置。有些场景下，模块路径在运行时才能确定，这时可以使用 vars 变量来配置。
+
+vars 配置的是模块标识中的变量值，在模块标识中用 {key} 来表示变量。
+
+seajs.config({
+    // 变量配置
+    vars: {
+        'locale': 'zh-cn'
+    }
+});
+define(function(require, exports, module) {
+  var lang = require('./i18n/{locale}.js');
+     //=> 加载的是 path/to/i18n/zh-cn.js
+});
+mapArray
+
+该配置可对模块路径进行映射修改，可用于路径转换、在线调试等。
+
+seajs.config({
+    map: [
+        [ '.js', '-debug.js' ]
+    ]
+});
+define(function(require, exports, module) {
+    var a = require('./a');
+    //=> 加载的是 path/to/a-debug.js
+});
+preloadArray
+
+使用preload配置项，可以在普通模块加载前，提前加载并初始化好指定模块。
+
+preload中的空字符串会被忽略掉。
+// 在老浏览器中，提前加载好 ES5 和 json 模块
+seajs.config({
+    preload: [
+        Function.prototype.bind ? '' : 'es5-safe',
+        this.JSON ? '' : 'json'
+    ]
+});
+注意：preload中的配置，需要等到 use 时才加载。比如：
+seajs.config({
+    preload: 'a'
+});
+
+// 在加载 b 之前，会确保模块 a 已经加载并执行好
+seajs.use('./b');
+preload 配置不能放在模块文件里面：
+seajs.config({
+    preload: 'a'
+});
+
+define(function(require, exports) {
+    // 此处执行时，不能保证模块 a 已经加载并执行好
+});
+debugBoolean
+
+值为true时，加载器不会删除动态插入的 script 标签。插件也可以根据debug配置，来决策 log 等信息的输出。
+
+baseString
+
+Sea.js 在解析顶级标识时，会相对 base 路径来解析。
+
+注意：一般请不要配置 base 路径，把 sea.js 放在合适的路径往往更简单一致。
+charsetString | Function
+
+获取模块文件时，<script> 或 <link> 标签的charset属性。 默认是utf-8
+
+charset还可以是一个函数：
+
+seajs.config({
+    charset: function(url) {
+        // xxx 目录下的文件用 gbk 编码加载
+        if (url.indexOf('http://example.com/js/xxx') === 0) {
+          return 'gbk';
+        }
+
+        // 其他文件用 utf-8 编码
+        return 'utf-8';
+    }
+});
+seajs.useFunction
+用来在页面中加载一个或多个模块。seajs.use(id, callback?)
+
+// 加载一个模块
+seajs.use('./a');
+
+// 加载一个模块，在加载完成时，执行回调
+seajs.use('./a', function(a) {
+  a.doSomething();
+});
+
+// 加载多个模块，在加载完成时，执行回调
+seajs.use(['./a', './b'], function(a, b) {
+  a.doSomething();
+  b.doSomething();
+});
+注意：seajs.use 与 DOM ready 事件没有任何关系。如果某些操作要确保在 DOM ready 后执行，需要使用 jquery 等类库来保证。比如
+seajs.use(['jquery', './main'], function($, main) {
+    $(document).ready(function() {
+        main.init();
+    });
+});
+注意：use方法第一个参数一定要有，但是可以是null，也可以是一个变量
+var bootstrap = ['bootstrap.css', 'bootstrap-responsive.css', 'bootstrap.js'];
+
+seajs.use(bootstrap, function() {
+    //do something
+});
+seajs.cacheOjbect
+通过 seajs.cache，可以查阅当前模块系统中的所有模块信息。
+
+比如，打开 seajs.org，然后在 WebKit Developer Tools 的 Console 面板中输入 seajs.cache，可以看到：
+
+Object
+  > http://seajs.org/docs/assets/main.js: x
+  > https://a.alipayobjects.com/jquery/jquery/1.10.1/jquery.js: x
+  > __proto__: Object
+                        
+这些就是文档首页用到的模块。展开某一项可以看到模块的具体信息，含义可参考：CMD 模块定义规范 中的 module 小节。
+
+seajs.resloveFunction
+类似require.resolve，会利用模块系统的内部机制对传入的字符串参数进行路径解析。
+
+seajs.resolve('jquery');
+// => http://path/to/jquery.js
+
+seajs.resolve('./a', 'http://example.com/to/b.js');
+// => http://example.com/to/a.js
+                        
+seajs.resolve 方法不光可以用来调试路径解析是否正确，还可以用在插件开发环境中。
+seajs.dataObject
+通过 seajs.data，可以查看 seajs 所有配置以及一些内部变量的值，可用于插件开发。当加载遇到问题时，也可用于调试。
+
+常见问题
+关于模块标识
+
+Seajs模块标识主要以小驼峰字符串、.或..
+
+// 在 http://example.com/js/a.js 的 factory 中：
+require.resolve('./b');
+  // => http://example.com/js/b.js
+
+// 在 http://example.com/js/a.js 的 factory 中：
+require.resolve('../c');
+  // => http://example.com/c.js
+分为 相对 与 顶级 标识。以.或..开头，则为相对标识 。以小驼峰字符串开关，则为顶级标识。
+
+// 假设 base 路径是：http://example.com/assets/
+
+// 在模块代码里：
+require.resolve('gallery/jquery/1.9.1/jquery');
+  // => http://example.com/assets/gallery/jquery/1.9.1/jquery.js
+关于路径
+
+Seajs除了相对与顶级标识之外，还可以使用普通路径来加载模块。
+
+就到当前页面的脚本分析（可以右键查看源码）
+
+//sea.js的路径，即 base 路径，相对于当前页面
+<script src="http://yslove.net/actjs/assets/sea-modules/seajs/2.1.1/sj.js"></script>
+
+<script type="text/javascript">
+//配置Seajs
+seajs.config({
+    alias: {
+        //顶级标识，基于 base 路径
+        'actjs': 'actjs/core/0.0.7/core.js',
+            // => http://
+        'position': 'actjs/util/0.0.2/position.js'
+    }
+});
+
+seajs.config({
+    alias: {
+        //普通路径，相对于当前页面
+        'affix': '../../actjs/assets/widget/src/widget-affix.js',
+
+        //相对标识，相对于当前页面
+        'init': './src/init.js'
+    }
+});
+</script>
+开始的时候会觉得Seajs的路径有点不习惯，由其是Base路径。切记Base路径就是sea.js的那个文件的上级路径，然后所有顶级标识，相对标识都是相对于这个Base来调整。
+
+
+webpack  http://www.jianshu.com/p/42e11515c10f
+
+
+amd:异步模块定义
+cmd:通用模块定义
+
+
+2017.7.30
+
+webpack  模块加载器兼打包工具
+优势：
+1. webpack 是以 commonJS 的形式来书写脚本滴，但对 AMD/CMD 的支持也很全面，方便旧项目进行代码迁移。
+2. 能被模块化的不仅仅是 JS 了。
+3. 开发便捷，能替代部分 grunt/gulp 的工作，比如打包、压缩混淆、图片转base64等。
+4. 扩展性强，插件机制完善，特别是支持 React 热插拔（见 react-hot-loader ）的功能让人眼前一亮。
+
+
+--watch:监督实时更新打包
+--progress:看到打包过程
+--progress --display-modules:看到打包模块
+--progress --display-modules --dislpay-reasons:看到打包模块的理由
