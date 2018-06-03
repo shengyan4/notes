@@ -775,6 +775,7 @@ sortby	可选。规定排序顺序。必须是函数。
     <p class="outerBox calc">
         </p><p class="innerBox">calc</p>
     <p></p>
+    ```
 
 
     /*绝对定位，clac计算位置*/
@@ -791,55 +792,55 @@ sortby	可选。规定排序顺序。必须是函数。
       top:calc((120px - 50px)/2);
     }
     4.
-    ```
-
+    ​```
+    
     3.flex盒模型
-
+    
     Flexbox 由 伸缩容器 和 伸缩项目 组成。通过设置元素的 display 属性为 flex 或 inline-flex 可以得到一个伸缩容器。设置为 flex 的容器被渲染为一个块级元素，而设置为 inline-flex 的容器则渲染为一个行内元素。
     主轴+交叉轴。
-
+    
     #### 兼容性：
-
+    
     ie10(-ms形式)，Chrome 22+, Opera 12.1+, 和 Opera 1.  1.  Mobile 12.1+
-
+    
     1. 安卓
-
+    
        2.3 开始就支持旧版本 display:-webkit-box;
        4.4 开始支持标准版本 display: flex;
-
+    
     2. IOS 
-
+    
        6.1 开始支持旧版本 display:-webkit-box;
        7.1 开始支持标准版本display: flex;
-
+    
     3. PC 
-
+    
        ![img](https://img-blog.csdn.net/20160922210759487)
-
+    
     #### 容器的属性：
-
+    
     1. flex-direction: row | row-reverse | column | column-reverse;//方向。
-
+    
     2. justify-content: flex-start | flex-end | center | space-between | space-around;主轴对齐方式。
-
+    
     3. align-items: flex-start | flex-end | center | baseline | stretch;交叉轴对齐方式
-
+    
     4. align-content: flex-start | flex-end | center | space-between | space-around | stretch;定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。
-
+    
     5. flex-wrap: nowrap | wrap | wrap-reverse;换行。
        6.flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap。
-
+    
        #### 项目属性：
-
+    
        order
        flex-grow
        flex-shrink
        flex-basis：属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。
        flex：flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto
        align-self：允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。
-
+    
     4.css选择器，可以继承的属性
-
+    
     | 选择符类型                                    | 例子                                       | 例子描述                                     |
     | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
     | 通用选择器                                    | *                                        |                                          |
@@ -853,7 +854,7 @@ sortby	可选。规定排序顺序。必须是函数。
     | 伪类选择器(`:link :visited :active :hover :focus :first-child`) | `a:link` `a:visited` `a:active` `a:hover` `input:focus` `p:first-child` | （选择所有未被访问的或所有已被访问的或活动的链接）（选择鼠标指针位于其上链接）（选择获得的焦点的input 元素） |
     | 伪元素选择器(`:first-letter` `:first-line` `:before` `:after` `:lang(language)`) | `p:first-letter` `p:first-line` `p:before` `p:after``p:lang(it)` | 选择每个 元素的首字母；选择每个 元素的首行；在每个 元素的内容之前插入内容；在每个 元素的内容之后插入内容；选择带有以 “it” 开头的 lang 属性值的每个 元素 |
     | 属性选择器(`[attribute] [attribute=value] [attribute~=value] [attribute|=value]` ) | `[target=_blank]`                        | [attribute~=value]选择包含一个以空格分隔的词为value的所有元素；[attribute\|=value]选择属性的值等于value，或值以 value- 开头的所有元素 |
-
+    
     css继承特性主要是指文本方面的继承，盒模型相关的属性基本没有继承特性。 
     **不可继承的：** 
     *display、margin、border、padding、background、height、min-height、max-height、width、min-width、max-width、overflow、position、top、bottom、left、right、z-index、float、clear、 table-layout、vertical-align、page-break-after、page-bread-before和unicode-bidi。* 
@@ -865,54 +866,54 @@ sortby	可选。规定排序顺序。必须是函数。
     *letter-spacing、word-spacing、white-space、line-height、color、font、font-family、font-size、font-style、font-variant、font-weight、text-decoration、text-transform、direction* 
     **列表元素可继承的：** 
     *list-style、list-style-type、list-style-position、list-style-image*
-
+    
     5.cookie/localstorage/sessionstorage区别
-
-    ```
-
-    ```
-
+    
+    ​```
+    
+    ​```
+    
     6.vue 绑定原理
-
+    
     7.封装组件
-
+    
     8.元素可绑定多个事件
-
+    
     9.不用border怎么写直线
-
+    
     10.vue 刷新?
-
+    
     11.vue 生命周期
-
+    
     12.vue 写一个页面，数据列表，随机两条数据交换位置，怎么交换？第一页的数据的第四条放到第64位？
-
+    
     13.全屏品字布局
-
+    
     14.帧动画？
-
+    
     15.事件流？冒泡？捕获？事件委托？
-
+    
      16.解构赋值用在哪里？
-
+    
     17.作用域
-
+    
     18.块级作用域怎样形成？es5/es6
-
+    
     19.es5继承/es6继承 异同
-
+    
     20.改变this的指向的方法,以及其区别
-
+    
     21.301，302，303，304怎样发生的
-
+    
     22.ajax原生js写出来，原理
-
+    
     23.移动端和pc端差异
-
+    
     24.vue 移动端 border 1px
-
+    
     25.web安全性能方面，预防措施，具体到怎么写代码
-
-    ```
+    
+    ​```
     服务攻击：针对程序漏洞进行攻击常见的有：
     SQL注入攻击
     文件上传攻击
@@ -923,17 +924,17 @@ sortby	可选。规定排序顺序。必须是函数。
     C段攻击 某台服务器被攻陷后通过内网进行ARP、DNS等内网攻击
     社会工程学 收集管理员等个人信息等资料尝试猜测其密码或者取得信任等
     最基本原则
-
+    
     永远不要相信用户提交上来的数据（包括header\cookie\seesionId），都可能造假
-
+    
     sql注入
-
+    
     原理：
-
+    
     后台的SQL语句通过字符串拼接后后导致执行各种意想不到的语句，配合sql语句的outfile功能，还能写入一个脚本文件到服务器。
-
+    
     例子：
-
+    
     比如根据用户post来的ID来列出单个人的信息 假设用户提交的id=1拼接出来为select * from table where id=1 这时执行正常假设用户提交的为id=1 and 1=1拼接出来为select * from table where and 1=1 这时执行异常，所以内容都被查出来了
     又如根据用户提交的job_rul=xxx来拼接，但是攻击者提交了job_rul=sql' or 1=1 limit 1--
     //正常的语句
@@ -944,83 +945,83 @@ sortby	可选。规定排序顺序。必须是函数。
     //故只会执行 select * from job_info where job_url='sql' or 1=1
     //所有信息都被查出来了
     预防：
-
+    
     在SQL拼接时注意过滤替换用户输入的字符串(但是本人不推荐这种方式)
     最安全的是mysql的预编译prepare，PHP的PDO将其实现了。因为语句先编译好了，用户怎么传都是一个参数。
     文件上传攻击
-
+    
     没有过滤就接收用户上传的文件(如.php等文件)或者没有给文件重命名，最后通过攻击者通过web请求导致恶意脚本调用被执行
-
+    
     常见漏洞
-
+    
     CGI漏洞 IIS7.5以下，nginx < 0.8.x通过123.jpg/1.php可以把 jpg当php执行，原理是其解析向前归递造成的，有人问jpg文件怎么当脚本运行，其实是图片里可以插入程序代码的，具体实现就不透露了
     apache,IIS解析漏洞123.php.jpg apache当成php来运行（IIS6,实测apache2.2.xx有这个问题，2.4.xx已经修复）
     攻击原理：攻击者上传带有恶意脚本的123.jpg到网站，获得了http://url.com/123.jpg这个文件路径，然后通过http://url.com/123.jpg/1.php触发123.jpg所带的程序代码
-
+    
     预防:
-
+    
     用户上传的文件要重命名，这样的话即便攻击者上传了.php,.sh等脚本上来也会被重命名成指定的文件类型(如jpg)导致无法被攻击者执行
     确保使用的apache nginx等版本到最稳定的安全版本。
     XSS攻击
-
+    
     原理：
-
+    
     反射型： 比如根据$_GET['username']显示到网页上 有可能被人username=<script src='xxx'></script>注入代码发给用户点击从而被攻击.也有可能JS读取了URL部分字段导致的储存型：通过发表文章等把代码存入数据库别人看的时候没过滤就执行出来。危害：盗取管理员密码 cookie 控制用户ajax等。预防：入库过滤和显示时过滤(htmlspeicalchar命令等)
-
+    
     csrf攻击
-
+    
     原理：
-
+    
     被攻击网站：用户登录后因为session缘故，浏览器关闭前所有请求都是合法的（不用再精彩账号密码认证了）当用户登录了网站A，这时候访问黑客的网站B，B站的js代码控制用户去调用网站A的一个脚本:
-
+    
     GET方式 如<img src="http://A.com/deletePost.php"> 这样就相当于以用户的身份去触发了对A站http://A.com/deletePost.php脚本的操作
     POST 这种方式要复杂一点，但是还是可以被攻击者利用(构造一个隐藏的html表单，通过js去提交到站点A)以用户的名义去触发操作，比如删除修改密码等，配合XSS攻击效果更明显。
     预防：
-
+    
     采用验证码，token,敏感操作避免GET(因为可以src等方式触发)
-
+    
     逻辑漏洞
-
+    
     比如删除（或修改）用户信息通过GET或POST id=2这样去修改信息支付漏洞：用户提交上来的商品数量为负数-10导致总价变化
-    ```
-
+    ​```
+    
     26.怎么把一个盒子里的某个元素移动到另一个盒子
-
+    
     27.settimeout/setinterval与requestAnimationFrame区别差异
-
+    
     28.如何理解webpack
-
+    
     https://github.com/slashhuang/blog/issues/1
-
+    
     29.制作动画的时候用到什么
-
+    
     30.html5新特性
-
+    
     31.看过哪些源码
-
+    
     32.浏览器缓存机制
-
+    
     33.事件模型
-
+    
     https://www.cnblogs.com/jyybeam/p/5794932.html
-
+    
     34，函数节流
-
+    
     35.为什么用vue?
-
+    
     36.promise
-
+    
     37.高清屏移动端border 1pxbug:
-
+    
     1.用图片
-
+    
     2.viewport+rem
-
+    
     3.transform: scale(0.5)
-
+    
     关于设备像素比devicePixelRatio可以参考这文章http://www.zhangxinxu.com/wordpress/2012/08/window-devicepixelratio/
-
-    ```
+    
+    ​```
     1. <span style="font-size:18px;"><html>  
     2.   
     3.     <head>  
@@ -1079,11 +1080,11 @@ sortby	可选。规定排序顺序。必须是函数。
        </body>  
        
      </html></span>  
-    ```
-
+    ​```
+    
     38.递归/算法
-
-    ```
+    
+    ​```
     var data=[
     {name:'aaa'},
     {name:'bbb',chdren:[
@@ -1091,17 +1092,17 @@ sortby	可选。规定排序顺序。必须是函数。
                                               {name:'ccc',chdren:[...]}
                         ]}
     ]}];
-    ```
-
+    ​```
+    
     把name属性的值遍历出来？
-
+    
     递归：在一个函数通过名字调用自身得情况下构成的。（arguments.callee:是一个指向正在执行得函数得指针，因此可以用它来实现对函数的递归调用，但是再严格模式下，不能通过脚本来访问，会导致错误）
-
-    ```
+    
+    ​```
     var data=[
-
+    
     {name:'aaa'},
-
+    
     {name:'bbb',chdren:[
                          {name:'ccc'},
                          {name:'ddd',chdren:[ {name:'eee'}]}
@@ -1119,21 +1120,21 @@ sortby	可选。规定排序顺序。必须是函数。
        })
     })
     aa(data);
-    ```
-
+    ​```
+    
     39：闭包的应用场景
-
-    ```
+    
+    ​```
     闭包是指有权访问另一个函数作用域中的变量的函数。闭包只能取得包含函数中任何变量的最后一个值。闭包保存的是整个变量对象，而不是某个特殊的变量。闭包有权访问包含函数内部的所有变量。一般函数执行结束之后会被销毁，但是当函数返回闭包时它的作用域将会一直在内存中保存到闭包不存在为止。
     应用场景1：模仿块级作用域
     应用场景2：在对象中创建私有变量
     应用场景3：模块模式
     闭包典型代码：
-    ```
-
+    ​```
+    
     40.继承
-
-    ```
+    
+    ​```
     es5:
     组合继承：
     function SuperType(name){
@@ -1162,62 +1163,62 @@ sortby	可选。规定排序顺序。必须是函数。
     alert(instance2.colors);
     instance2.sayName();
     instance2.sayAge();
-    ```
-
+    ​```
+    
     41.怎么利用http协议缓存
-
+    
     <meta http-equiv='Cache-control' content='no-cache'>
-
+    
     42.你在项目遇到过的问题？怎么解决？
-
+    
     43.自我介绍？
-
+    
     44.为什么离职？
-
+    
     45.职业规划？
-
+    
     46.你有什么想了解的吗？
-
+    
     ttxx 
-
+    
     1.web框架，列举三种，对比优缺点。
-
+    
     https://www.oschina.net/translate/web-frameworks-conclusions
-
-    ```
-
-    ```
-
+    
+    ​```
+    
+    ​```
+    
     2.sql语法：
-
+    
     表一：user
-
+    
     id  name
-
+    
     1   张三
-
+    
     2   李四
-
+    
     表二 mass
-
+    
     id  user  num
-
+    
     1     1       5 
-
+    
     2     2       5 
-
+    
     3     3       5 
-
+    
     表二的user对应表一的id,查找每个人的num。
-
+    
     select mass.user,mass.num from user left join mass on user.id = mass.user
-
+    
     3.模拟post表单请求。
-
-    ```
+    
+    ​```
       var http = require('http');
             var querystring = require('querystring');
-
+    
             var post_options = {
                 host: '192.168.1.22',
                 port: '80',
@@ -1241,9 +1242,9 @@ sortby	可选。规定排序顺序。必须是函数。
             var post_req = http.request(post_options, function(res) {
                 res.setEncoding('utf8');
                 console.log(JSON.stringify(res.headers));
-
+    
                 res.on('data', function (chunk) {
-
+    
                     console.log('Response: ' + chunk);
                 });
             });
@@ -1253,29 +1254,29 @@ sortby	可选。规定排序顺序。必须是函数。
             // post the data
             post_req.write(post_data);
             post_req.end();
-    ```
-
+    ​```
+    
     4.说一下，在工作中遇到问题，你怎么排查？找到问题后怎么优化？
-
+    
     5.有A,B,C,D,E个站，他们的路线及花费的时间如下，
-
+    
     AB4,BC5,CD7,DC7,CE6,DE6,AC4.
-
+    
     请编码完成以下功能，计算出路线总花费多少时间。
-
+    
     输入路线：
-
+    
     1.ABC
-
+    
     2.BC
-
+    
     3.DCE
-
+    
     如没有则返回no such router.
-
+    
     6.promise原理
-
-    ```
+    
+    ​```
     含义：语法糖，一个对象，用来传递异步操作的消息。代表了某个未来才会知道结果的事件，并且这个事件提供统一的api，可供进一步处理。
     特点: 1. 对象的状态不受外界影响。
           2. 一旦状态改变就不会在变，任何时候都可以得到这个结果。
@@ -1296,15 +1297,15 @@ sortby	可选。规定排序顺序。必须是函数。
           }
           2.generator函数与promise结合
           3.ajax请求
-    ```
-
+    ​```
+    
     ![IMG_1720](D:\Desktop\IMG_1720.JPG)
-
-    ​
-
+    
+    
+    
     ![IMG_1719](D:\Desktop\IMG_1719.JPG)7.封装ajax请求，用原生js写下：
-
-    ```
+    
+    ​```
       function ajax(opt) {
               opt = opt || {};
              opt.method = opt.method.toUpperCase() || 'POST';
@@ -1338,107 +1339,107 @@ sortby	可选。规定排序顺序。必须是函数。
                  }
              };
          }
-    ```
-
+    ​```
+    
     8.function bb(){
-
+    
     alert('bb');
-
+    
     }
-
+    
     bb();
-
+    
     function bb(){
-
+    
     alert('aa');
-
+    
     }
-
+    
     bb();
-
+    
     输出？
-
-    ```
+    
+    ​```
     两次打印的都是aa,因为函数提升，两个重名的函数按优先级提升至代码顶部，相当于是这样：
     function bb(){
-
+    
     alert('bb');
-
+    
     }
     function bb(){
-
+    
     alert('aa');
-
+    
     }
     bb();
     bb();
     所以，后者函数声明覆盖了前者，所以是两次都执行了后面的函数。
-    ```
-
+    ​```
+    
     9.
-
-    ```
+    
+    ​```
     this.x = 9;   
-
+    
     var module = {
-
+    
       x: 81,
-
+    
       getX: function() { return this.x; }
-
+    
     };
-
+    
     module.getX(); // 81
-
+    
     var retrieveX = module.getX();
-
+    
     retrieveX();   //9
-
+    
     // returns 9 - The function gets invoked at the global scope
-
+    
     // Create a new function with 'this' bound to module
-
+    
     // New programmers might confuse the
-
+    
     // global var x with module's property x
-
+    
     var boundGetX = retrieveX.bind(module);
-
+    
     boundGetX(); // 81
-
-    ```
-
+    
+    ​```
+    
     10.一个字符串，每三位添加一个逗号，就是金钱数字，然后做一种自动把钱数用逗号分隔的效果。
-
+    
     eg: var a='1234567';
-
+    
     你要通过你写的方法变成a='1,234,567'
-
+    
     11.用一个div标签实现十字架效果，三种方法至少。
-
-    ​     1.css 伪元素after,before
-
-    ​     2.boxshadow盖住四个角 
-
-    ​     3.svg/canvas
-
-    ​     4.放背景图片
-
+    
+         1.css 伪元素after,before
+    
+         2.boxshadow盖住四个角 
+    
+         3.svg/canvas
+    
+         4.放背景图片
+    
     12.var a=[1,2,3,4,3,3,4,1,1,2];
-
+    
     写一个方法，把出现超过两次的给删了。
-
+    
     13.email正则表达式
-
-    ```
+    
+    ​```
     /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/
-    ```
-
+    ​```
+    
     14.写一个vue组件，省略号组件，当内容超过整体宽度时自动隐藏并加上省略号。点击省略号时打开其内容的效果。
-
+    
     15.
-
-    ```
+    
+    ​```
     var _fn=function(){
     	console.log(1);
     };
@@ -1470,6 +1471,32 @@ sortby	可选。规定排序顺序。必须是函数。
     })();
     输出？？
     1，4，3，1，报错
-    ```
+    ​```
+    
+    
+```
+求一个字符串中，次数出现最多得字母及次数
+function aa(){
+	return arr.reduce(function(a,b){
+  a[b]=(a[b]+1)||1;
+   return a;
+   },{});
+};
+var aa=aa();
+var maxNum=0;
+var max='';
+for(var i in aa){
+	if(aa[i]>maxNum){
+maxNum=aa[i];
+max=i;
+	}
+  
+}
+for(var i in aa){
+	if(aa[i]==maxNum){
+console.log(i);
+console.log(aa[i]);
 
-    ​
+	}
+}
+```
