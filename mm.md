@@ -1,3 +1,5 @@
+### 前端面试题总结
+
 1. 小程序的生命周期
 
 生命周期是指一个小程序从创建到销毁的一系列过程.在小程序中 ，通过App()来注册一个小程序 ，通过Page()来注册一个页面.
@@ -5,17 +7,12 @@
 ```
 app():
 onLaunch 生命周期函数--监听小程序初始化 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
-
 onShow 生命周期函数--监听小程序显示 当小程序启动，或从后台进入前台显示，会触发 onShow
-
-onHide 生命周期函数--监听小程序隐藏 当小程序从前台进入后台，会触发 onHide
-
+onHide 生命周期函数--监听小程序隐藏 当小程序从前台进入后台，会触onHide
 onError 错误监听函数 当小程序发生脚本错误，或者 api 调用失败时，会触发 onError 并带上错误信息
 
 其他 Any 开发者可以添加任意的函数或数据到 Object 参数中，用 this 可以访问
 ps:onLaunch,onShow会返回一个对象，包含三个参数，path:打开小程序的路径，query:打开小程序页面url携带的参数，scene:场景值。
-
-
 page():
 onLoad 生命周期函数--监听页面加载
 
@@ -44,21 +41,10 @@ vue数据双向绑定是通过数据劫持结合发布者-订阅者模式的方�
 
 数据劫持（通过object.defineproperty()定义访问器属性）改变数据存取的默认行为。有三个参数，对象，属性，描述符对象。
 
-  首先将该任务分成几个子任务：
-
-　　 1、输入框以及文本节点与 data 中的数据绑定
-
-　　 2、输入框内容变化时，data 中的数据同步变化。即 view => model 的变化。
-
-　　 3、data 中的数据变化时，文本节点的内容同步变化。即 model => view 的变化。
-
-       要实现任务一，需要对 DOM 进行编译，这里有一个知识点：DocumentFragment。
-
 DocumentFragment（文档片段）可以看作节点容器，它可以包含多个子节点，当我们将它插入到 DOM 中时，只有它的子节点会插入目标节点，所以把它看作一组节点的容器。使用 DocumentFragment 处理节点，速度和性能远远优于直接操作 DOM。Vue 进行编译时，就是将挂载目标的所有子节点劫持（真的是劫持，通过 append 方法，DOM 中的节点会被自动删除）到 DocumentFragment 中，经过一番处理后，再将 DocumentFragment 整体返回插入挂载目标。
 
   订阅发布模式（又称观察者模式）定义了一种一对多的关系，让多个观察者同时监听某一个主题对象，这个主题对象的状态发生改变时就会通知所有观察者对象。
-
-       发布者发出通知 => 主题对象收到通知并推送给订阅者 => 订阅者执行相应操作
+  发布者发出通知 => 主题对象收到通知并推送给订阅者 => 订阅者执行相应操作
 ```
 
 
@@ -102,94 +88,87 @@ console.log(b.toString()); //1,2,3,4,5,6,56
 
 4. var a=[1,2,3];
 
-​    var b=a;
+​       var b=a;
 
-   a=[0,2,3];
+​             a=[0,2,3];
 
-  console.log(b);？
+​     console.log(b);？//输出？
 
-var a=[1,2,3];
+​      var a=[1,2,3];
 
-​    var b=a;
+​      var b=a;
 
-   a.push(3);
+​            a.push(3);
 
-  console.log(b);？
+​            console.log(b);？//输出？
 
 ```
-1.var a=[1,2,3];
-
-    var b=a;
-
-   a=[0,2,3];//开辟了一个新的内存，所以b还是指向原来的内存的对象
-
-  console.log(b);//[1,2,3]
-2.var a=[1,2,3];
-
-    var b=a;
-
-   a.push(3);
-
-  console.log(b);//[1,2,3,3]
+答：1. var a=[1,2,3];
+       var b=a;
+       a=[0,2,3];//开辟了一个新的内存，所以b还是指向原来的内存的对象
+       console.log(b);//[1,2,3]
+   2.var a=[1,2,3];
+     var b=a;
+     a.push(3);
+     console.log(b);//[1,2,3,3]
   浅拷贝，引用类型值，引用类型的值是保存在内存中的对象，javas不允许直接访问内存中的位置，也就是说不能直接操作对象的内存空间，当从一个变量向另一个变量复制引用类型的值时，同样也会将存储在变量对象中的值复制一份放到新变量分配的空间。不同的是，这个值的副本实际是一个指针，而这个指针指向存储在堆中的一个对象。复制操作结束后，两个变量实际上将引用同一个对象。因此改变其中一个变量就会影响另一个变量。
   
 
-
 ```
 
-var a=[1,2,3];
-var b=a;
- a.push(3);
- console.log(b);//[1,2,3,3]
+4.1. var a=[1,2,3];
+​       var b=a;
+​       a.push(3);
+​       console.log(b);//[1,2,3,3]
   怎么解决让b=[1,2,3],原来的a,换句话是怎样实现深拷贝？
 
 
-      var a=[1,2,3];
-      function getType(obj){
-           //tostring会返回对应不同的标签的构造函数
-           var toString = Object.prototype.toString;
-           var map = {
-              '[object Boolean]'  : 'boolean', 
-              '[object Number]'   : 'number', 
-              '[object String]'   : 'string', 
-              '[object Function]' : 'function', 
-              '[object Array]'    : 'array', 
-              '[object Date]'     : 'date', 
-              '[object RegExp]'   : 'regExp', 
-              '[object Undefined]': 'undefined',
-              '[object Null]'     : 'null', 
-              '[object Object]'   : 'object'
-          };
-          if(obj instanceof Element) {
-               return 'element';
-          }
-          return map[toString.call(obj)];
-       }
-        function deepClone(data){
-           var type = getType(data);
-           var obj;
-           if(type === 'array'){
-               obj = [];
-           } else if(type === 'object'){
-               obj = {};
-           } else {
-               //不再具有下一层次
-               return data;
-           }
-           if(type === 'array'){
-               for(var i = 0, len = data.length; i < len; i++){
-                   obj.push(deepClone(data[i]));
-               }
-           } else if(type === 'object'){
-               for(var key in data){
-                   obj[key] = deepClone(data[key]);
-               }
-           }
-           return obj;
-       }
-       var b=deepClone(a);
-       a.push(3);
-       console.log(b);
+    var a = [1, 2, 3];
+    function getType(obj) {
+      //tostring会返回对应不同的标签的构造函数
+      var toString = Object.prototype.toString;
+      var map = {
+        "[object Boolean]": "boolean",
+        "[object Number]": "number",
+        "[object String]": "string",
+        "[object Function]": "function",
+        "[object Array]": "array",
+        "[object Date]": "date",
+        "[object RegExp]": "regExp",
+        "[object Undefined]": "undefined",
+        "[object Null]": "null",
+        "[object Object]": "object"
+      };
+      if (obj instanceof Element) {
+        return "element";
+      }
+      return map[toString.call(obj)];
+    }
+    function deepClone(data) {
+      var type = getType(data);
+      var obj;
+      if (type === "array") {
+        obj = [];
+      } else if (type === "object") {
+        obj = {};
+      } else {
+        //不再具有下一层次
+        return data;
+      }
+      if (type === "array") {
+        for (var i = 0, len = data.length; i < len; i++) {
+          obj.push(deepClone(data[i]));
+        }
+      } else if (type === "object") {
+        for (var key in data) {
+          obj[key] = deepClone(data[key]);
+        }
+      }
+      return obj;
+    }
+    var b = deepClone(a);
+    a.push(3);
+    console.log(b);
 
 5. 变量提升
 
@@ -219,16 +198,20 @@ var b=a;
     2.特殊情况
       子类继承object类，不存在任何继承，继承null.
     3.Object.getPrototypeOf()可用于从子类上获取父类。
-    4. 子类实例的_proto_属性的_proto_属性指向父类实例的_proto_属性。子类的原型的原型是父类的原型。因此，通过子类实例的 _proto_属性的_proto_属性可以修改父类实例的行为。
+    4. 子类实例的_proto_属性的_proto_属性指向父类实例的_proto_属性。子类的原型的原型是父类的原型。因此，通过子类实例的 _proto_属性的_proto_属性可以修改父类实例的行为。,
+    
    ```
 
-7. es6,set/map
+7.  set/map
 
-set()自动去重
+   ```
+   set()自动去重
 
-map():它类似于对象，也是键值对的集合，但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键。也就是说，Object 结构提供了“字符串—值”的对应，Map 结构提供了“值—值”的对应，是一种更完善的 Hash 结构实现。如果你需要“键值对”的数据结构，Map 比 Object 更合适。
+   map():它类似于对象，也是键值对的集合，但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键。也就是说，Object 结构提供了“字符串—值”的对应，Map 结构提供了“值—值”的对应，是一种更完善的 Hash 结构实现。如果你需要“键值对”的数据结构，Map 比 Object 更合适。
+   ```
 
-7. vue组件间传值与小程序组件间传值
+
+7.  vue组件间传值与小程序组件间传值
 
 ```
 vue组件间传值：
@@ -265,8 +248,9 @@ methods:{
 // 将在各处使用该事件中心
 // 组件通过它来通信
 var eventHub = new Vue()
-然后在组件中，可以使用 $emit, $on, $off 分别来分发、监听、取消监听事件：
+然后在组件中，可以使用 $emit , $on, $off 分别来分发、监听、取消监听事件：
 4.vuex:专用的状态管理层
+小程序组件间传值：
 ```
 
 8. 跨域方式
@@ -1273,7 +1257,21 @@ sortby	可选。规定排序顺序。必须是函数。
     3.DCE
     
     如没有则返回no such router.
+    var aa={ab:4,bc:5,cd:7,dc:7,de:6,ac:4,ce:5};
+    var bb=function(arr){
+    	let cc=arr.split('-');
+    	let all=0;
+    	cc.reduce(function(a,b,c,d){
+    		if(aa[a+b]){
+    			 all=aa[a+b]+all;
+    		}
     
+        return d[c];
+    });
+    	return all==0?'no such result':all;
+    
+    }
+    console.log(bb('a-c'));
     6.promise原理
     
     ​```
@@ -1300,146 +1298,145 @@ sortby	可选。规定排序顺序。必须是函数。
     ​```
     
     ![IMG_1720](D:\Desktop\IMG_1720.JPG)
-    
-    
-    
-    ![IMG_1719](D:\Desktop\IMG_1719.JPG)7.封装ajax请求，用原生js写下：
-    
-    ​```
-      function ajax(opt) {
-              opt = opt || {};
-             opt.method = opt.method.toUpperCase() || 'POST';
-             opt.url = opt.url || '';
-            opt.async = opt.async || true;
-             opt.data = opt.data || null;
-            opt.success = opt.success || function () {};
-             var xmlHttp = null;
-             if (XMLHttpRequest) {
-                 xmlHttp = new XMLHttpRequest();
-             }
-             else {
-                 xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');
-             }var params = [];
-             for (var key in opt.data){
-                 params.push(key + '=' + opt.data[key]);
-            }
-             var postData = params.join('&');
-            if (opt.method.toUpperCase() === 'POST') {
-                 xmlHttp.open(opt.method, opt.url, opt.async);
-                 xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
-                 xmlHttp.send(postData);
-             }
-             else if (opt.method.toUpperCase() === 'GET') {
-                 xmlHttp.open(opt.method, opt.url + '?' + postData, opt.async);
-                 xmlHttp.send(null);
-             } 
-             xmlHttp.onreadystatechange = function () {
-                 if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-                     opt.success(xmlHttp.responseText);
-                 }
-             };
-         }
-    ​```
-    
-    8.function bb(){
-    
-    alert('bb');
-    
+
+​     ![IMG_1719](D:\Desktop\IMG_1719.JPG)
+
+7.封装ajax请求，用原生js写下：
+
+```
+function ajax(opt) {
+  opt = opt || {};
+  opt.method = opt.method.toUpperCase() || "POST";
+  opt.url = opt.url || "";
+  opt.async = opt.async || true;
+  opt.data = opt.data || null;
+  opt.success = opt.success || function() {};
+  var xmlHttp = null;
+  if (XMLHttpRequest) {
+    xmlHttp = new XMLHttpRequest();
+  } else {
+    xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  var params = [];
+  for (var key in opt.data) {
+    params.push(key + "=" + opt.data[key]);
+  }
+  var postData = params.join("&");
+  if (opt.method.toUpperCase() === "POST") {
+    xmlHttp.open(opt.method, opt.url, opt.async);
+    xmlHttp.setRequestHeader(
+      "Content-Type",
+      "application/x-www-form-urlencoded;charset=utf-8"
+    );
+    xmlHttp.send(postData);
+  } else if (opt.method.toUpperCase() === "GET") {
+    xmlHttp.open(opt.method, opt.url + "?" + postData, opt.async);
+    xmlHttp.send(null);
+  }
+  xmlHttp.onreadystatechange = function() {
+    if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+      opt.success(xmlHttp.responseText);
     }
-    
-    bb();
-    
-    function bb(){
-    
-    alert('aa');
-    
-    }
-    
-    bb();
-    
-    输出？
-    
-    ​```
-    两次打印的都是aa,因为函数提升，两个重名的函数按优先级提升至代码顶部，相当于是这样：
-    function bb(){
-    
-    alert('bb');
-    
-    }
-    function bb(){
-    
-    alert('aa');
-    
-    }
-    bb();
-    bb();
-    所以，后者函数声明覆盖了前者，所以是两次都执行了后面的函数。
-    ​```
-    
-    9.
-    
-    ​```
-    this.x = 9;   
-    
-    var module = {
-    
-      x: 81,
-    
-      getX: function() { return this.x; }
-    
-    };
-    
-    module.getX(); // 81
-    
-    var retrieveX = module.getX();
-    
-    retrieveX();   //9
-    
-    // returns 9 - The function gets invoked at the global scope
-    
-    // Create a new function with 'this' bound to module
-    
-    // New programmers might confuse the
-    
-    // global var x with module's property x
-    
-    var boundGetX = retrieveX.bind(module);
-    
-    boundGetX(); // 81
-    
-    ​```
-    
-    10.一个字符串，每三位添加一个逗号，就是金钱数字，然后做一种自动把钱数用逗号分隔的效果。
-    
-    eg: var a='1234567';
-    
-    你要通过你写的方法变成a='1,234,567'
-    
-    11.用一个div标签实现十字架效果，三种方法至少。
-    
-         1.css 伪元素after,before
-    
-         2.boxshadow盖住四个角 
-    
-         3.svg/canvas
-    
-         4.放背景图片
-    
-    12.var a=[1,2,3,4,3,3,4,1,1,2];
-    
-    写一个方法，把出现超过两次的给删了。
-    
-    13.email正则表达式
-    
-    ​```
-    /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/
-    ​```
-    
-    14.写一个vue组件，省略号组件，当内容超过整体宽度时自动隐藏并加上省略号。点击省略号时打开其内容的效果。
-    
+  };
+}
+```
+
+ 
+
+8.function bb(){
+
+alert('bb');
+
+}
+
+bb();
+
+function bb(){
+
+alert('aa');
+
+}
+
+bb();
+
+输出？
+
+```
+两次打印的都是aa,因为函数提升，两个重名的函数按优先级提升至代码顶部，相当于是这样：
+function bb(){
+
+alert('bb');
+
+}
+function bb(){
+
+alert('aa');
+
+}
+bb();
+bb();
+所以，后者函数声明覆盖了前者，所以是两次都执行了后面的函数。
+```
+
+9.
+
+```
+this.x = 9;   
+
+var module = {
+
+  x: 81,
+
+  getX: function() { return this.x; }
+
+};
+
+module.getX(); // 81
+
+var retrieveX = module.getX();
+
+retrieveX();   //9
+
+// returns 9 - The function gets invoked at the global scope
+
+// Create a new function with 'this' bound to module
+
+// New programmers might confuse the
+
+// global var x with module's property x
+
+var boundGetX = retrieveX.bind(module);
+
+boundGetX(); // 81
+
+```
+
+10.一个字符串，每三位添加一个逗号，就是金钱数字，然后做一种自动把钱数用逗号分隔的效果。
+
+eg: var a='1234567';
+
+你要通过你写的方法变成a='1,234,567'
+
+11.用一个div标签实现十字架效果，三种方法至少。
+
+     1. css 伪元素after,before
+     2. boxshadow盖住四个角 
+     3. svg/canvas
+     4. 放背景图片
+12.var a=[1,2,3,4,3,3,4,1,1,2];
+
+写一个方法，把出现超过两次的给删了。
+
+13.email正则表达式
+
+```
+/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/
+```
+
+14.写一个vue组件，省略号组件，当内容超过整体宽度时自动隐藏并加上省略号。点击省略号时打开其内容的效果。
+
+
     15.
-    
-    ​```
     var _fn=function(){
     	console.log(1);
     };
@@ -1472,31 +1469,36 @@ sortby	可选。规定排序顺序。必须是函数。
     输出？？
     1，4，3，1，报错
     ​```
-    
-    
-```
-求一个字符串中，次数出现最多得字母及次数
-function aa(){
-	return arr.reduce(function(a,b){
-  a[b]=(a[b]+1)||1;
-   return a;
-   },{});
-};
-var aa=aa();
-var maxNum=0;
-var max='';
-for(var i in aa){
-	if(aa[i]>maxNum){
-maxNum=aa[i];
-max=i;
-	}
-  
-}
-for(var i in aa){
-	if(aa[i]==maxNum){
-console.log(i);
-console.log(aa[i]);
 
+15.求一个字符串中，次数出现最多得字母及次数
+
+
+	function aa() {
+	  return arr.reduce(function(a, b) {
+	    a[b] = a[b] + 1 || 1;
+	
+	    return a;
+	  }, {});
 	}
-}
-```
+	
+	var aa = aa();
+	
+	var maxNum = 0;
+	
+	var max = "";
+	
+	for (var i in aa) {
+	  if (aa[i] > maxNum) {
+	    maxNum = aa[i];
+	
+	    max = i;
+	  }
+	}
+	
+	for (var i in aa) {
+	  if (aa[i] == maxNum) {
+	    console.log(i);
+	
+	    console.log(aa[i]);
+	  }
+	}
