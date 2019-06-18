@@ -5,46 +5,47 @@
 package.json(https://docs.npmjs.com/files/package.json)
 
 ```
-{
-  "name": "vue", // 项目名
-  "version": "2.6.10", //版本号
-  "description": "Reactive, component-oriented view layer for modern web interfaces.",
-  //项目描述
-  "main": "dist/vue.runtime.common.js",
-  "module": "dist/vue.runtime.esm.js",
- // 
- 	1.main : 定义了 npm 包的入口文件，browser 环境和 node 环境均可使用
-	2.module : 定义 npm 包的 ESM 规范的入口文件，browser 环境和 node 环境均可使用
-	3.browser : 定义 npm 包在 browser 环境下的入口文件
+
 ```
 
  	
 
-```
-"unpkg": "dist/vue.js",
+```json
+{
+  "name": "vue", //项目名
+  "version": "2.6.10" //版本号
+  "description": "Reactive, component-oriented view layer for modern web interfaces.",
+  //项目描述
+  "main": "dist/vue.runtime.common.js",
+  "module": "dist/vue.runtime.esm.js",
+ // 1.main : 定义了 npm 包的入口文件，browser 环境和 node 环境均可使用
+	2.module : 定义 npm 包的 ESM 规范的入口文件，browser 环境和 node 环境均可使用
+	3.browser : 定义 npm 包在 browser 环境下的入口文件
+  "unpkg": "dist/vue.js",
 // unpkg是一个内容源自npm 的全球快速CDN（CDN是构建在网络之上的内容分发网络，依靠部署在各地的边缘服务器，通过中心平台的负载均衡、内容分发、调度等功能模块，使用户就近获取所需内容，降低网络拥塞，提高用户访问响应速度和命中率。CDN的关键技术主要有内容存储和分发技术。）, 通过url（例如:unpkg.com/:package@:version/:file）的形式快速、简单的方式提供任意包、任意文件。使用它会提升load速度且如果传入项目至公共静态资源库npm是无需发布至cdn,仅需 npm 包中包含 UMD 构建即可（并非在代码仓库里包含，两者不同！）。如果该url为裸url（例如：unpkg.com/:file），就会提供 package.json 里指定的文件，或降级到 main。（这种方式会产生一次 302 到最新的文件 URL。好处是自动使用最新版，坏处是多一次性跳转，降低了性能。在网址最后添加斜线，可以查看一个包内的所有文件列表。）url后可携带两个参数，一个是meta(以 JSON 格式返回包的元数据（metadata）),一个是module(展开 javascript 模块里所有裸文件 import 为 unpkg 网址。).
 ```
 
-```
+```json
   "jsdelivr": "dist/vue.js", // 作用同上,使用方法不一样，自行谷歌。
 ```
 
-```
+```json
   "typings": "types/index.d.ts",
    //Typings工具可以用于Visual Studio Code的代码补全.vscode 的默认只有es原声api带有自动补全的功能，现在V1.9的版本默认已经支持NodeJS的智能补全。如果想获取jquery，nodejs，Requirejs，express等更多的提示扩展就需要使用Typings工具
 ```
 
-```
+```json
   "files": [
     "src",
     "dist/.js",
     "types/.d.ts"
   ],
   // 安装npm包时，保留的哪种格式的文件
-  "sideEffects": false,//webpack中module的sideEffects配置属性，false:无副作用，webpack可以的删除没有引用到的代码。
+  "sideEffects": false,
+//webpack中module的sideEffects配置属性，false:无副作用，webpack可以的删除没有引用到的代码。
 ```
 
-```
+```json
   "scripts": {
     "dev": "rollup -w -c scripts/config.js --environment TARGET:web-full-dev",
     "dev:cjs": "rollup -w -c scripts/config.js --environment TARGET:web-runtime-cjs-dev",
@@ -78,7 +79,7 @@ package.json(https://docs.npmjs.com/files/package.json)
   //script:设置npm包的生命周期的script命令集合，里边指定了项目的生命周期各个环节需要执行的命令。key是生命周期中的事件，value是要执行的命令。
 ```
 
-```
+```json
   "gitHooks": {
     "pre-commit": "lint-staged",
     "commit-msg": "node scripts/verify-commit-msg.js"
@@ -92,7 +93,7 @@ package.json(https://docs.npmjs.com/files/package.json)
 
 ```
 
-```
+```json
   "lint-staged": {
     "*.js": [
       "eslint --fix",
@@ -103,7 +104,7 @@ package.json(https://docs.npmjs.com/files/package.json)
   //husky:在git的pre-commit阶段来检测你的代码，如果存在语法错误会中断commit，在提交代码时会检查所有文件。
 ```
 
-```
+```json
  "repository": {
     "type": "git",
     "url": "git+https://github.com/vuejs/vue.git"
@@ -122,7 +123,7 @@ package.json(https://docs.npmjs.com/files/package.json)
   "homepage": "https://github.com/vuejs/vue#readme",//项目主页
 ```
 
-```
+```json
   "devDependencies": {
     "@babel/core": "^7.0.0",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
@@ -143,9 +144,9 @@ package.json(https://docs.npmjs.com/files/package.json)
     "buble": "^0.19.3",
     "chalk": "^2.3.0",
     // chalk 包的作用是修改控制台中字符串的样式，包括：
-        字体样式(加粗、隐藏等)
-        字体颜色
-        背景颜色
+    // 字体样式(加粗、隐藏等)
+    // 字体颜色
+    // 背景颜色
     "chromedriver": "^2.45.0",
     //是 google 为网站开发人员提供的自动化测试接口，它是 selenium2 和 chrome浏览器 进行通信的桥梁。selenium 通过一套协议（JsonWireProtocol ：https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol）和 ChromeDriver 进行通信，selenium 实质上是对这套协议的底层封装，同时提供外部 WebDriver 的上层调用类库。
     "codecov": "^3.0.0",
